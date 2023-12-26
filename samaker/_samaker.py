@@ -209,7 +209,7 @@ def _call_dependence(dependent_api: Callable or Text, api_name: Text, imp_module
             logger.error(f"导入模块{imp_module}未找到，请确保imp_module传入参数正确")
             raise mne
         except ImportError as ie:
-            logger.error(f"导入ao对象错误：{class_}，请确保dependence传入参数正确")
+            logger.error(f"导入sa对象错误：{class_}，请确保dependence传入参数正确")
             raise ie
         except SyntaxError as se:
             logger.error(f"dependence传入imp_module参数错误，imp_module={imp_module} ")
@@ -228,7 +228,7 @@ def _call_dependence(dependent_api: Callable or Text, api_name: Text, imp_module
         logger.info(f"==========<{api_name}>前置依赖<{depend_api_name}>执行==========")
         res = dependent_api(*out_args, **out_kwargs)
         depend_api_info = {"name": depend_api_name, "module": _get_module_name_by_method_obj(dependent_api),
-                           "ao": type(dependent_api.__self__).__name__.lower()}
+                           "sa": type(dependent_api.__self__).__name__.lower()}
     return res, depend_api_info
 
 
@@ -239,7 +239,7 @@ def _call_dependence_for_update(api_info: Dict, *out_args, **out_kwargs) -> Dict
     try:
         ao = getattr(module, api_info.get("ao"))
     except AttributeError as e:
-        logger.error(f"在{api_module}中未找到ao对象<{api_info.get('ao')}>！")
+        logger.error(f"在{api_module}中未找到sa对象<{api_info.get('ao')}>！")
         raise e
     res = getattr(ao, api_name)(*out_args, **out_kwargs)
     return res

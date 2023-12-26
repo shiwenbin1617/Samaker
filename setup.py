@@ -5,7 +5,7 @@ with open("README.md ", "r") as fh:
 
 setuptools.setup(
     name="samaker",
-    version="0.0.1",
+    version="0.0.5",
     author="wenbin Shi",
     author_email="shiwenbin1617@gmail.com",
     description="A TestCase maker package",

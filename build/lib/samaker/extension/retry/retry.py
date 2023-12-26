@@ -20,7 +20,7 @@ def after_log():
     return log_it
 
 
-class AoMakerRetry(Retrying):
+class SaMakerRetry(Retrying):
     def __init__(self, counts: int = 3, interval: int = 2, retry_condition=None, exception_type=None, **kwargs):
         super().__init__(**kwargs)
         self.reraise = True
@@ -46,7 +46,7 @@ def retry(*dargs: t.Any, **dkw: t.Any) -> t.Any:
         return retry()(dargs[0])
     else:
         def wrap(f: WrappedFn) -> WrappedFn:
-            r = AoMakerRetry(*dargs, **dkw)
+            r = SaMakerRetry(*dargs, **dkw)
 
             return r.wraps(f)
 

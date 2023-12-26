@@ -95,7 +95,7 @@ def run(ctx, env, log_level, mp, mt, d_suite, d_file, d_mark, no_login, no_gen, 
     if env:
         set_conf_file(env)
     if log_level != "info":
-        click.echo(emojize(f":rocket:<AoMaker>切换日志等级：{log_level}"))
+        click.echo(emojize(f":rocket:<SaMaker>切换日志等级：{log_level}"))
         AoMakerLogger.change_level(log_level)
     login_obj = _handle_login(no_login)
     from samaker.runner import run as runner_run, processes_run, threads_run

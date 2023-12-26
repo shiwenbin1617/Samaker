@@ -30,6 +30,7 @@ HOOK_MODULE_NAME = "hooks"
 plugin_path = os.path.join(BASEDIR, f'{HOOK_MODULE_NAME}.py')
 yaml = YAML()
 
+
 class OptionHandler:
     def __init__(self):
         self.options = {}
@@ -94,21 +95,21 @@ def run(ctx, env, log_level, mp, mt, d_suite, d_file, d_mark, no_login, no_gen, 
     if env:
         set_conf_file(env)
     if log_level != "info":
-        click.echo(emojize(f":rocket:<AoMaker>切换日志等级：{log_level}"))
+        click.echo(emojize(f":rocket:<SaMaker>切换日志等级：{log_level}"))
         AoMakerLogger.change_level(log_level)
     login_obj = _handle_login(no_login)
     from samaker.runner import run as runner_run, processes_run, threads_run
     if mp:
-        click.echo("🚀<AoMaker> 多进程模式准备启动...")
+        click.echo("🚀<SaMaker> 多进程模式准备启动...")
         processes_run(_handle_dist_mode(d_mark, d_file, d_suite), login=login_obj, extra_args=pytest_args,
                       is_gen_allure=no_gen)
         ctx.exit()
     elif mt:
-        click.echo("🚀<AoMaker> 多线程模式准备启动...")
+        click.echo("🚀<SaMaker> 多线程模式准备启动...")
         threads_run(_handle_dist_mode(d_mark, d_file, d_suite), login=login_obj, extra_args=pytest_args,
                     is_gen_allure=no_gen)
         ctx.exit()
-    click.echo("🚀<AoMaker> 单进程模式准备启动...")
+    click.echo("🚀<SaMaker> 单进程模式准备启动...")
     runner_run(pytest_args, login=login_obj, is_gen_allure=no_gen)
     ctx.exit()
 
@@ -254,24 +255,24 @@ def _handle_dist_mode(d_mark, d_file, d_suite):
     if d_mark:
         params = [f"-m {mark}" for mark in d_mark]
         mode_msg = "dist-mark"
-        click.echo(f"🚀<AoMaker> 分配模式: {mode_msg}")
+        click.echo(f"🚀<SaMaker> 分配模式: {mode_msg}")
         return params
 
     if d_file:
         params = {"path": d_file}
         mode_msg = "dist-file"
-        click.echo(f"🚀<AoMaker> 分配模式: {mode_msg}")
+        click.echo(f"🚀<SaMaker> 分配模式: {mode_msg}")
         return params
 
     if d_suite:
         params = d_suite
         mode_msg = "dist-suite"
-        click.echo(f"🚀<AoMaker> 分配模式: {mode_msg}")
+        click.echo(f"🚀<SaMaker> 分配模式: {mode_msg}")
         return params
 
     params = _handle_samaker_yaml()
     mode_msg = "dist-mark(samaker.yaml策略)"
-    click.echo(f"🚀<AoMaker> 分配模式: {mode_msg}")
+    click.echo(f"🚀<SaMaker> 分配模式: {mode_msg}")
     return params
 
 
