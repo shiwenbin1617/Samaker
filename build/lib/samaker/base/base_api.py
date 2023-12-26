@@ -14,7 +14,7 @@ from samaker.log import logger, samaker_logger
 from samaker.cache import Config, Cache, schema
 from samaker._samaker import genson
 from samaker.exceptions import HttpRequestError
-from samaker.samaker import AoMakerRetry
+from samaker.samaker import SaMakerRetry
 from samaker.path import API_DIR
 
 template = """
@@ -196,7 +196,7 @@ class BaseApi:
                 return session.request(method=method, url=url, **kwargs)
 
         if self.IS_HTTP_RETRY:
-            for attempt in AoMakerRetry(counts=self.HTTP_RETRY_COUNTS, interval=self.HTTP_RETRY_INTERVAL,
+            for attempt in SaMakerRetry(counts=self.HTTP_RETRY_COUNTS, interval=self.HTTP_RETRY_INTERVAL,
                                         exception_type=HttpRequestError):
                 with attempt:
                     return session_request()

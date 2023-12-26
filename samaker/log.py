@@ -116,5 +116,5 @@ class AoMakerLogger:
                 return h_info._levelno
 
 
-aomaker_logger = AoMakerLogger()
-logger = aomaker_logger.logger
+samaker_logger = AoMakerLogger()
+logger = samaker_logger.logger
