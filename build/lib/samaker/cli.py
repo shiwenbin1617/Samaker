@@ -12,8 +12,8 @@ from click_help_colors import HelpColorsGroup, version_option
 
 from samaker import __version__, __image__
 from samaker._constants import Conf
-from samaker.log import logger, AoMakerLogger
-from samaker.path import CONF_DIR, AOMAKER_YAML_PATH
+from samaker.log import logger, SaMakerLogger
+from samaker.path import CONF_DIR, SAMAKER_YAML_PATH
 from samaker.hook_manager import _cli_hook
 from samaker.param_types import QUOTED_STR
 from samaker.path import BASEDIR
@@ -23,7 +23,7 @@ from samaker.make_testcase import main_case, main_make_case
 from samaker.extension.har_parse import main_har2yaml
 from samaker.extension.recording import filter_expression, main_record
 from samaker.utils.utils import load_yaml
-from samaker.models import AomakerYaml
+from samaker.models import SamakerYaml
 
 SUBCOMMAND_RUN_NAME = "run"
 HOOK_MODULE_NAME = "hooks"
@@ -96,7 +96,7 @@ def run(ctx, env, log_level, mp, mt, d_suite, d_file, d_mark, no_login, no_gen, 
         set_conf_file(env)
     if log_level != "info":
         click.echo(emojize(f":rocket:<SaMaker>切换日志等级：{log_level}"))
-        AoMakerLogger.change_level(log_level)
+        SaMakerLogger.change_level(log_level)
     login_obj = _handle_login(no_login)
     from samaker.runner import run as runner_run, processes_run, threads_run
     if mp:
@@ -277,11 +277,11 @@ def _handle_dist_mode(d_mark, d_file, d_suite):
 
 
 def _handle_samaker_yaml() -> List[Text]:
-    if not os.path.exists(AOMAKER_YAML_PATH):
-        click.echo(emojize(f':confounded_face: samaker策略文件{AOMAKER_YAML_PATH}不存在！'))
+    if not os.path.exists(SAMAKER_YAML_PATH):
+        click.echo(emojize(f':confounded_face: samaker策略文件{SAMAKER_YAML_PATH}不存在！'))
         sys.exit(1)
-    yaml_data = load_yaml(AOMAKER_YAML_PATH)
-    content = AomakerYaml(**yaml_data)
+    yaml_data = load_yaml(SAMAKER_YAML_PATH)
+    content = SamakerYaml(**yaml_data)
     targets = content.target
     marks = content.marks
     d_mark = []

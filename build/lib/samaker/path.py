@@ -21,6 +21,6 @@ DB_DIR = os.path.join(BASEDIR, "database")
 # pytest.ini文件路径
 PYTEST_INI_DIR = os.path.join(BASEDIR, "pytest.ini")
 # samaker html路径
-AOMAKER_HTML = os.path.join(REPORT_DIR, "samaker.html")
+SAMAKER_HTML = os.path.join(REPORT_DIR, "samaker.html")
 
-AOMAKER_YAML_PATH = os.path.join(CONF_DIR, "samaker.yaml")
+SAMAKER_YAML_PATH = os.path.join(CONF_DIR, "samaker.yaml")

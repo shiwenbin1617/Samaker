@@ -4,7 +4,7 @@ import os
 from jinja2 import Template
 
 from samaker.utils.gen_allure_report import CaseSummary, CaseDetail
-from samaker.path import AOMAKER_HTML
+from samaker.path import SAMAKER_HTML
 from samaker._printer import printer
 
 base_dir = os.path.dirname(__file__)
@@ -12,7 +12,7 @@ base_html_path = os.path.join(base_dir, "html")
 
 
 class HtmlMaker:
-    def __init__(self, report_target_path=AOMAKER_HTML):
+    def __init__(self, report_target_path=SAMAKER_HTML):
         self.heading_html_path = os.path.join(base_html_path, "heading.html")
         self.report_html_path = os.path.join(base_html_path, "report.html")
         self.template_html_path = os.path.join(base_html_path, "template.html")

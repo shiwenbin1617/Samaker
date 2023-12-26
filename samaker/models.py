@@ -72,7 +72,7 @@ class YamlTestcase(BaseModel):
     steps: List[Steps]
 
 
-class AomakerYaml(BaseModel):
+class SamakerYaml(BaseModel):
     target: List
     marks: Dict[constr(min_length=1), Union[Dict[Text, List[Text]], List[Text]]]
 
@@ -86,7 +86,6 @@ if __name__ == '__main__':
     def func(data: dict = None):
         m = ExecuteAsyncJobCondition(data)
         print(m)
-
 
 
     func(None)
