@@ -1,0 +1,5 @@
+
+hpython:S1192>"KDefine a constant instead of duplicating this literal ' where {};' 3 times.(ñÒŒäÿÿÿÿÿ
+kpython:S11927"SDefine a constant instead of duplicating this literal """delete from {}""" 6 times.(½š‡×
+Cpython:S1481"&Remove the unused local variable "ie".(…÷şÿÿÿÿ
+vpython:S2737‚"XAdd logic to this except clause or eliminate it and rethrow the exception automatically.(ÏõîËûÿÿÿÿ

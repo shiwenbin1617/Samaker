@@ -65,10 +65,10 @@ class Runner:
         # AoMakerLogger().allure_handler('debug')
         args.extend(self.pytest_args)
         pytest_opts = _get_pytest_ini()
-        logger.info(f"<AoMaker> 单进程启动")
-        logger.info(f"<AoMaker> pytest的执行参数：{args}")
+        logger.info(f"<SaMaker> 单进程启动")
+        logger.info(f"<SaMaker> pytest的执行参数：{args}")
         if pytest_opts:
-            logger.info(f"<AoMaker> pytest.ini配置参数：{pytest_opts}")
+            logger.info(f"<SaMaker> pytest.ini配置参数：{pytest_opts}")
         pytest.main(args)
         if is_gen_allure:
             self.allure_env_prop()
@@ -184,7 +184,7 @@ class ProcessesRunner(Runner):
         task_args = self.make_task_args(task_args)
         process_count = len(task_args)
         p = Pool(process_count)
-        logger.info(f"<AoMaker> 多进程任务启动，进程数：{process_count}")
+        logger.info(f"<SaMaker> 多进程任务启动，进程数：{process_count}")
         for arg in make_args_group(task_args, extra_args):
             p.apply_async(main_task, args=(arg,))
         p.close()
@@ -214,7 +214,7 @@ class ThreadsRunner(Runner):
         task_args = self.make_task_args(task_args)
         thread_count = len(task_args)
         tp = ThreadPoolExecutor(max_workers=thread_count)
-        logger.info(f"<AoMaker> 多线程任务启动，线程数：{thread_count}")
+        logger.info(f"<SaMaker> 多线程任务启动，线程数：{thread_count}")
         _ = [tp.submit(main_task, arg) for arg in make_args_group(task_args, extra_args)]
         wait(_, return_when=ALL_COMPLETED)
         tp.shutdown()
@@ -227,9 +227,9 @@ class ThreadsRunner(Runner):
 def main_task(args: list):
     """pytest启动"""
     pytest_opts = _get_pytest_ini()
-    logger.info(f"<AoMaker> pytest的执行参数：{args}")
+    logger.info(f"<SaMaker> pytest的执行参数：{args}")
     if pytest_opts:
-        logger.info(f"<AoMaker> pytest.ini配置参数：{pytest_opts}")
+        logger.info(f"<SaMaker> pytest.ini配置参数：{pytest_opts}")
     pytest.main(args)
 
 
