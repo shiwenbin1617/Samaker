@@ -8,7 +8,6 @@ from samaker.swagger2yaml import main_swagger2yaml
 from samaker.template import Template as Temp
 from samaker._log import logger
 
-
 def _create_dir(dir_path):
     if not os.path.exists(dir_path):
         os.mkdir(dir_path)

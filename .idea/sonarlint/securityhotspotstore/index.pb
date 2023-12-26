@@ -123,3 +123,5 @@ M
 build/lib/samaker/template.py,f/f/ff36c34d32b44a0e5fd4bc1eb69a9139c432a928
 K
 build/lib/samaker/report.py,5/c/5cae48aebbbe98ce941d74a880f16b43794457f2
+L
+build/lib/samaker/samaker.py,b/3/b34608d1bd6097fa13c63c1fe6bb5dc4957e2a51
