@@ -125,3 +125,7 @@ K
 build/lib/samaker/report.py,5/c/5cae48aebbbe98ce941d74a880f16b43794457f2
 L
 build/lib/samaker/samaker.py,b/3/b34608d1bd6097fa13c63c1fe6bb5dc4957e2a51
+;
+MANIFEST.in,8/8/8875df48c18030126ef5ef5a6f5c93b23451fb9f
+8
+build.sh,5/9/59f81c123b3abbcb97274545796dd18706c3e106

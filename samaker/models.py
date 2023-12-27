@@ -72,7 +72,7 @@ class YamlTestcase(BaseModel):
     steps: List[Steps]
 
 
-class SamakerYaml(BaseModel):
+class AomakerYaml(BaseModel):
     target: List
     marks: Dict[constr(min_length=1), Union[Dict[Text, List[Text]], List[Text]]]
 

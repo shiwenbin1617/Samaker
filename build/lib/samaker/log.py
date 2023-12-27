@@ -19,7 +19,7 @@ class AllureHandler(logging.Handler):
         logging.getLogger(record.name).handle(record)
 
 
-class AoMakerLogger:
+class SaMakerLogger:
     logger = uru_logger
 
     # log level: TRACE < DEBUG < INFO < SUCCESS < WARNING < ERROR < CRITICAL
