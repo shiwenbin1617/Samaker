@@ -1,4 +1,5 @@
 LICENSE
+MANIFEST.in
 setup.py
 samaker/__init__.py
 samaker/_constants.py
@@ -43,6 +44,10 @@ samaker/extension/recording/addons.py
 samaker/extension/recording/recording.py
 samaker/extension/retry/__init__.py
 samaker/extension/retry/retry.py
+samaker/html/AOReporter_logo.png
+samaker/html/heading.html
+samaker/html/report.html
+samaker/html/template.html
 samaker/send_msg/__init__.py
 samaker/send_msg/wechat.py
 samaker/utils/__init__.py

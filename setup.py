@@ -1,11 +1,11 @@
 import setuptools
 
-with open("README.md", "r") as fh:
+with open("README.md ", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="samaker",
-    version="1.0.1",
+    version="1.0.5",
     author="wenbin Shi",
     author_email="shiwenbin1617@gmail.com",
     description="A TestCase maker package",
