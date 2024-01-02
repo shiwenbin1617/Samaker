@@ -129,3 +129,7 @@ L
 MANIFEST.in,8/8/8875df48c18030126ef5ef5a6f5c93b23451fb9f
 8
 build.sh,5/9/59f81c123b3abbcb97274545796dd18706c3e106
+C
+samaker/_printer.py,3/5/35a2e4de2fbf033aaedd20b8fd47600755cf6785
+a
+1build/lib/samaker/extension/recording/__init__.py,3/1/314a1a2065e89b13f47efae8c691f6bad31e567f

@@ -69,12 +69,12 @@ def main_record(args):
     port = args.port
     log_level = args.level
     try:
-        print('AoMaker开始录制')
+        print('SaMaker开始录制')
         from mitmproxy.tools.main import mitmdump
         mitmdump([f'-p {port}', f'-s {addons_file_path}', f'--flow-detail {log_level}'])
         # os.system(f'mitmdump -p {port} -s {addons_file_path} --flow-detail {log_level}')
     except KeyboardInterrupt:
-        print('AoMaker录制完成')
+        print('SaMaker录制完成')
 
 
 def init_record_parser(subparsers):

@@ -5,7 +5,7 @@ with open("README.md ", "r") as fh:
 
 setuptools.setup(
     name="samaker",
-    version="1.0.6",
+    version="1.1.0",
     author="wenbin Shi",
     author_email="shiwenbin1617@gmail.com",
     description="A TestCase maker package",
@@ -19,4 +19,9 @@ setuptools.setup(
     ],
     python_requires='>=3.6',  # Python版本要求
     include_package_data=True,  # 包含在MANIFEST.in中指定的数据文件
+    entry_points={  # 添加 entry_points
+        'console_scripts': [
+            'samaker=samaker.cli:main',  # '命令=模块:函数'
+        ],
+    },
 )

@@ -245,7 +245,7 @@ def set_conf_file(env):
             sys.exit(1)
         with open(conf_path, 'w') as f:
             yaml.dump(doc, f)
-        click.echo(emojize(f':rocket:<AoMaker> 当前测试环境: {env}'))
+        click.echo(emojize(f':rocket:<SaMaker> 当前测试环境: {env}'))
     else:
         click.echo(emojize(f':confounded_face: 配置文件{conf_path}不存在'))
         sys.exit(1)
