@@ -133,3 +133,7 @@ C
 samaker/_printer.py,3/5/35a2e4de2fbf033aaedd20b8fd47600755cf6785
 a
 1build/lib/samaker/extension/recording/__init__.py,3/1/314a1a2065e89b13f47efae8c691f6bad31e567f
+W
+'samaker/extension/recording/__init__.py,2/c/2cafc4fa647dac0320aa175698d92c8e5bfc71df
+K
+build/lib/samaker/runner.py,c/4/c49b804b56af0ecc82da0ad28443dc619449e569

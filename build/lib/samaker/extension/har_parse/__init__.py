@@ -32,7 +32,7 @@ def init_har2yaml_parser(subparsers):
     """ convert HAR to YAML: parse command line options and run commands.
     """
     parser = subparsers.add_parser(
-        "har2y", help="Convert HAR(HTTP Archive) to YAML testcases for AoMaker.", formatter_class=SmartFormatter
+        "har2y", help="Convert HAR(HTTP Archive) to YAML testcases for SaMaker.", formatter_class=SmartFormatter
     )
     parser.add_argument(
         "har_path", type=str, nargs="?",

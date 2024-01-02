@@ -19,7 +19,7 @@ class Logger:
     def __init__(self):
         self.logger = logging.getLogger()
         self.logger.setLevel(logging.DEBUG)
-        self.formatter = colorlog.ColoredFormatter('%(log_color)s%(asctime)s [AoMaker]-[%(levelname)s]%(message)s',
+        self.formatter = colorlog.ColoredFormatter('%(log_color)s%(asctime)s [SaMaker]-[%(levelname)s]%(message)s',
                                                    "%Y-%m-%d %H:%M:%S", log_colors=LOG_COLORS)
         self.sh_open = True
 

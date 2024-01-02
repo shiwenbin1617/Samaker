@@ -173,7 +173,7 @@ def mcase(file_path):
 @click.option("--save_response", is_flag=True, help="Save response.")
 @click.option("--save_headers", is_flag=True, help="Save headers.")
 def har2y(har_path, yaml_path, filter_str, exclude_str, save_response, save_headers):
-    """Convert HAR(HTTP Archive) to YAML testcases for AoMaker.
+    """Convert HAR(HTTP Archive) to YAML testcases for SaMaker.
 
     Arguments:\n
     HAR_PATH: HAR file path.

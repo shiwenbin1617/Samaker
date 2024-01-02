@@ -62,7 +62,7 @@ class Runner:
     @fixture_session
     def run(self, args: list, login: BaseLogin = None, is_gen_allure=True, **kwargs):
         # 配置allure报告中显示日志
-        # AoMakerLogger().allure_handler('debug')
+        # SaMakerLogger().allure_handler('debug')
         args.extend(self.pytest_args)
         pytest_opts = _get_pytest_ini()
         logger.info(f"<SaMaker> 单进程启动")

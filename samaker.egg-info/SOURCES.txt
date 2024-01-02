@@ -29,6 +29,7 @@ samaker/yaml2case.py
 samaker.egg-info/PKG-INFO
 samaker.egg-info/SOURCES.txt
 samaker.egg-info/dependency_links.txt
+samaker.egg-info/entry_points.txt
 samaker.egg-info/top_level.txt
 samaker/base/__init__.py
 samaker/base/base_api.py
