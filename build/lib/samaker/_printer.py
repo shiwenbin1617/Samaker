@@ -5,8 +5,8 @@ from samaker.log import logger
 class TestSessionInfo:
     init_env_s = "开始初始化环境", "puzzle_piece"
     init_env_e = "环境初始化完成，所有全局配置已加载到config表", "beer_mug"
-    gen_rep_s = "测试结束, SaMaker开始收集报告", "glowing_star"
-    gen_rep_e = "SaMaker已完成测试报告(reports/samaker.html)!", "glowing_star"
+    gen_rep_s = "测试结束, AoMaker开始收集报告", "glowing_star"
+    gen_rep_e = "AoMaker已完成测试报告(reports/samaker.html)!", "glowing_star"
     clean_env_s = "测试结束，开始清理环境", "broom"
     clean_env_e = "清理环境完成！", "broom"
 

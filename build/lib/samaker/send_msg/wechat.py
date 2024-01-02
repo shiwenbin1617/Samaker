@@ -16,7 +16,7 @@ class WeChatSend:
     企业微信消息通知
     """
 
-    def __init__(self, tester="古一", title="自动化测试通知", report_address=""):
+    def __init__(self, tester="swb", title="自动化测试通知", report_address=""):
         self.wechat_conf = load_yaml(utils_yaml_path)['wechat']
         self.curl = self.wechat_conf['webhook']
         self.headers = {"Content-Type": "application/json"}
