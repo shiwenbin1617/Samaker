@@ -1,13 +1,13 @@
 # --coding:utf-8--
-class SaMakerException(Exception):
+class AoMakerException(Exception):
     pass
 
 
-class NotFoundError(SaMakerException):
+class NotFoundError(AoMakerException):
     pass
 
 
-class FileNotFound(FileNotFoundError, SaMakerException):
+class FileNotFound(FileNotFoundError, AoMakerException):
     def __init__(self, path):
         self.path = path
 
@@ -23,7 +23,7 @@ class SchemaNotFound(NotFoundError):
         return f'jsonschema未找到:{self.api_name}，请确保该api的jsonschema存在'
 
 
-class ConfKeyError(SaMakerException):
+class ConfKeyError(AoMakerException):
     def __init__(self, key_name):
         self.key_name = key_name
 
@@ -31,7 +31,7 @@ class ConfKeyError(SaMakerException):
         return f'config.yaml配置文件中未找到key:{self.key_name}，请确保该key存在'
 
 
-class YamlKeyError(SaMakerException):
+class YamlKeyError(AoMakerException):
     def __init__(self, file_path, key_name):
         self.file_path = file_path
         self.key_name = key_name
@@ -40,12 +40,12 @@ class YamlKeyError(SaMakerException):
         return f'测试数据文件（{self.file_path}）中未找到key:{self.key_name}，请确保该key存在'
 
 
-class LoginError(SaMakerException):
+class LoginError(AoMakerException):
     def __str__(self):
         return "用例启动函数run未传入Login对象"
 
 
-class HttpRequestError(SaMakerException):
+class HttpRequestError(AoMakerException):
     def __init__(self, status_code):
         self.status_code = status_code
 
@@ -53,7 +53,7 @@ class HttpRequestError(SaMakerException):
         return f'请求失败，状态码：{self.status_code}'
 
 
-class JsonPathExtractFailed(SaMakerException):
+class JsonPathExtractFailed(AoMakerException):
     def __init__(self, res, jsonpath_expr):
         self.res = res
         self.jsonpath_expr = jsonpath_expr

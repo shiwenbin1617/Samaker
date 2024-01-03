@@ -66,10 +66,14 @@ def response_callback(payload: dict):
         caller_name = f"{caller_name} {doc}"
 
         print_info, allure_info, std_logger = _handle_print_info(payload, response, caller_name)
-
-        if response.status_code >= 400:
-            logger.error(_render_template(template, print_info))
-            raise HttpRequestError(str(response.status_code))
+        response_code = response.json().get('code')
+        if response.status_code >= 400 or (response_code is not None and response_code < 0):
+            error_message = _render_template(template, print_info)
+            # 在日志信息中包含response_code
+            logger.error(
+                f"HTTP Status Code: {response.status_code}, Response Code: {response_code}, Error Message: {error_message}")
+            # 在抛出的异常中包含response_code
+            raise HttpRequestError(f"HTTP Status Code: {response.status_code}, Response Code: {response_code} !")
         else:
             try:
                 resp_body = response.json()

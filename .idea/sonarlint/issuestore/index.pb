@@ -137,3 +137,5 @@ W
 'samaker/extension/recording/__init__.py,2/c/2cafc4fa647dac0320aa175698d92c8e5bfc71df
 K
 build/lib/samaker/runner.py,c/4/c49b804b56af0ecc82da0ad28443dc619449e569
+M
+samaker/base/base_testcase.py,9/7/970a3e55e7169dc53c77c96c05dcb8dcda096497
