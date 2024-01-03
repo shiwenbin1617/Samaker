@@ -221,7 +221,7 @@ def _call_dependence(dependent_api: Callable or Text, api_name: Text, imp_module
         except TypeError as te:
             logger.error(f"dependence参数传递错误，错误参数：{dependent_api}")
             raise te
-        depend_api_info = {"name": method_, "module": imp_module, "ao": class_.lower()}
+        depend_api_info = {"name": method_, "module": imp_module, "sa": class_.lower()}
     else:
         # 不同类下的接口
         depend_api_name = dependent_api.__name__
@@ -237,9 +237,9 @@ def _call_dependence_for_update(api_info: Dict, *out_args, **out_kwargs) -> Dict
     api_module = api_info.get("module")
     module = importlib.import_module(api_module)
     try:
-        ao = getattr(module, api_info.get("ao"))
+        ao = getattr(module, api_info.get("sa"))
     except AttributeError as e:
-        logger.error(f"在{api_module}中未找到sa对象<{api_info.get('ao')}>！")
+        logger.error(f"在{api_module}中未找到sa对象<{api_info.get('sa')}>！")
         raise e
     res = getattr(ao, api_name)(*out_args, **out_kwargs)
     return res
