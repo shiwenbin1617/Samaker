@@ -1,5 +1,6 @@
 
-Ãpython:S1515Á"ªAdd a parameter to the parent lambda function and use variable "default_value" as its default value; The value of "default_value" might change at the next loop iteration.(Êœ
+Lpython:S1481k"(Remove the unused local variable "resp".(•—÷ÿÿÿÿÿ8–œ†”Í1
+Ãpython:S1515Î"ªAdd a parameter to the parent lambda function and use variable "default_value" as its default value; The value of "default_value" might change at the next loop iteration.(Êœ
 
-Äpython:S1515Å"ªAdd a parameter to the parent lambda function and use variable "default_value" as its default value; The value of "default_value" might change at the next loop iteration.(»¿µå
-<python:S125¢"Remove this commented out code.(Ê¡Ïœÿÿÿÿÿ
+Äpython:S1515Ò"ªAdd a parameter to the parent lambda function and use variable "default_value" as its default value; The value of "default_value" might change at the next loop iteration.(»¿µå
+<python:S125¯"Remove this commented out code.(Ê¡Ïœÿÿÿÿÿ
