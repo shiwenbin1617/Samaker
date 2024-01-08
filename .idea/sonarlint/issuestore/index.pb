@@ -139,3 +139,9 @@ K
 build/lib/samaker/runner.py,c/4/c49b804b56af0ecc82da0ad28443dc619449e569
 M
 samaker/base/base_testcase.py,9/7/970a3e55e7169dc53c77c96c05dcb8dcda096497
+I
+samaker/database/mysql.py,f/8/f8d5224e2d282ccc19a03c3d01bc1fd95744e71d
+X
+(samaker/extension/har_parse/har_parse.py,6/0/60009991925bd6aa5b909db0593fc5d4d7fc57d7
+X
+(samaker/extension/recording/recording.py,3/f/3f3c9ce52c4484a5bfdccef7a0ed3f03a506887e
