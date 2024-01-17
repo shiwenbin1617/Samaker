@@ -21,12 +21,10 @@ template = """
 {{tag}}
 {{emoji_api}} <API>: {{caller_name}} {{doc}}
 {{emoji_req}} <Request>
+{{ emoji_headers }} <Headers>: {{ headers }}
      URL: {{url}}
 {% if method -%}
 {% raw %}     Method: {%endraw%}{{method}}
-{% endif -%}
-{% if headers -%}
-{% raw %}     Headers: {%endraw%}{{headers}}
 {% endif -%}
 {% if request_params -%}
 {% raw %}     Request Params: {%endraw%}{{request_params}}
@@ -114,6 +112,7 @@ def _handle_print_info(request_payload, response, caller_name):
     params = request_payload.get('params')
     req_data = request_payload.get("data")
     req_json = request_payload.get("json")
+    headers = request_payload.get("headers")
 
     info = {
         "caller_name": caller_name,
@@ -121,7 +120,8 @@ def _handle_print_info(request_payload, response, caller_name):
         "request_params": params,
         "request_data": req_data,
         "request_json": req_json,
-        "response_body": None
+        "response_body": None,
+        "headers": headers
     }
     allure_info = {
         "url": url,
@@ -138,7 +138,6 @@ def _handle_print_info(request_payload, response, caller_name):
     if log_current_level == 10:
         info.update({
             "method": request_payload.get('method'),
-            "headers": request_payload.get('headers'),
             "status_code": response.status_code,
             "elapsed": response.elapsed.total_seconds(),
         })
@@ -147,6 +146,7 @@ def _handle_print_info(request_payload, response, caller_name):
                   "emoji_api": emojize(":A_button_(blood_type):"),
                   "emoji_req": emojize(":rocket:"),
                   "emoji_rep": emojize(":check_mark_button:"),
+                  "emoji_headers": emojize(":globe_showing_Europe-Africa:"),
                   **info}
     return print_info, allure_info, std_logger
 

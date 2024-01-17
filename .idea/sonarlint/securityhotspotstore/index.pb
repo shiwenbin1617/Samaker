@@ -145,3 +145,7 @@ X
 (samaker/extension/har_parse/har_parse.py,6/0/60009991925bd6aa5b909db0593fc5d4d7fc57d7
 X
 (samaker/extension/recording/recording.py,3/f/3f3c9ce52c4484a5bfdccef7a0ed3f03a506887e
+E
+samaker/_constants.py,4/4/44c4a4a8f266dd902fcaf954104a8e04b6805fd8
+J
+samaker/database/sqlite.py,1/2/12044b38f73cd48a8c3ee30ffb0872b76a96b679
