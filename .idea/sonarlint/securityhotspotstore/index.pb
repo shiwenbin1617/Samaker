@@ -149,3 +149,7 @@ E
 samaker/_constants.py,4/4/44c4a4a8f266dd902fcaf954104a8e04b6805fd8
 J
 samaker/database/sqlite.py,1/2/12044b38f73cd48a8c3ee30ffb0872b76a96b679
+U
+%samaker/extension/recording/addons.py,6/6/6659846132ab22761cd326e913e764635720a539
+L
+samaker/database/__init__.py,e/1/e1276bd47ccb7120676c4f0f6e8686a390c3e1e6
