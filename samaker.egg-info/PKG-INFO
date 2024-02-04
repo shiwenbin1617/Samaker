@@ -1,6 +1,10 @@
 Metadata-Version: 2.1
 Name: samaker
+<<<<<<< HEAD
 Version: 1.2.1
+=======
+Version: 1.2.2
+>>>>>>> origin/main
 Summary: A TestCase maker package
 Author: wenbin Shi
 Author-email: shiwenbin1617@gmail.com
