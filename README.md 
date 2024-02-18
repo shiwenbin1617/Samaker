@@ -1,4 +1,3 @@
-
 # 🛠️ 核心思想 - API Object Maker
 
 **API Object** 是 **Page Object** 设计模式在接口测试上的扩展。通过将基础接口抽象成对象，可以方便地组装不同的业务流场景。
@@ -22,7 +21,7 @@ class ShoppingTrolley:
 
 测试购物车流程时，只需实例化 `ShoppingTrolley` 类并调用相应的方法。
 
-**Maker** 是框架提供的辅助工具，帮助快速编排`case`。
+**Maker** 是框架提供的辅助工具，帮助快速编排 `case`。
 
 ### 如何辅助？
 
@@ -54,3 +53,4 @@ class ShoppingTrolley:
 - 📊 allure 报告优化
 - 📢 测试报告消息通知
 - ...及更多
+```
