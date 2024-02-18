@@ -1,3 +1,56 @@
-# Example Package
 
-This is a simple example package. You can use
+# 🛠️ 核心思想 - API Object Maker
+
+**API Object** 是 **Page Object** 设计模式在接口测试上的扩展。通过将基础接口抽象成对象，可以方便地组装不同的业务流场景。
+
+例如，一个购物车功能包含 `add`、`list` 和 `delete` 接口。使用 **API Object** 思想，我们可以封装这些接口如下：
+
+```python
+class ShoppingTrolley:
+    def add(self):
+        """添加物品到购物车"""
+        pass
+
+    def delete(self):
+        """清空购物车"""
+        pass
+
+    def list(self):
+        """查看购物车内所有物品"""
+        pass
+```
+
+测试购物车流程时，只需实例化 `ShoppingTrolley` 类并调用相应的方法。
+
+**Maker** 是框架提供的辅助工具，帮助快速编排`case`。
+
+### 如何辅助？
+
+例如，接口参数化处理可以分为三类：
+
+- **常量**：固定参数值
+- **上游依赖变量**：从其他接口返回值中提取的参数
+- **测试数据**：从用例层传入的数据
+
+`samaker` 通过装饰器 `@dependence` 和 `@async_api` 处理依赖和异步接口。
+
+# 🎯 定位
+
+一款基于 `pytest` 的框架，采用 **API Object** 方式管理接口测试，提高自动化项目搭建和脚本编写的速度与维护性。
+
+# ✨ 特性
+
+- 🖥️ 提供 CLI 命令
+- 🚀 脚手架一键安装，开箱即用
+- 📊 简单的变量管理
+- 🔗 简洁处理依赖和异步接口
+- 🔁 不同粒度的重试机制
+- 🛠️ 三种方式快速编写 ao 和 case
+- 🧵 支持多进程和多线程
+- 📈 易扩展性
+- 📝 丰富的断言库
+- 📼 支持流量录制
+- 🧪 兼容 pytest 所有用法和插件
+- 📊 allure 报告优化
+- 📢 测试报告消息通知
+- ...及更多
